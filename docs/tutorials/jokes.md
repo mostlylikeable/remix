@@ -249,11 +249,11 @@ You can programmatically create routes via the [`remix.config.js`][remix-config-
 
 Each file we put in the `app/routes` directory is called a Route Module and by following [the route filename convention][the-route-filename-convention], we can create the routing URL structure we're looking for. Remix uses [React Router][react-router] under the hood to handle this routing.
 
-💿 Let's start with the index route (`/`). To do that, create a file at `app/routes/index.tsx` and `export default` a component from that route module. For now, you can have it just say "Hello Index Route" or something.
+💿 Let's start with the index route (`/`). To do that, create a file at `app/routes/_index.tsx` and `export default` a component from that route module. For now, you can have it just say "Hello Index Route" or something.
 
 <details>
 
-<summary>app/routes/index.tsx</summary>
+<summary>app/routes/_index.tsx</summary>
 
 ```tsx filename=app/routes/index.tsx
 export default function IndexRoute() {
@@ -263,7 +263,7 @@ export default function IndexRoute() {
 
 </details>
 
-React Router supports "nested routing" which means we have parent-child relationships in our routes. The `app/routes/index.tsx` is a child of the `app/root.tsx` route. In nested routing, parents are responsible for laying out their children.
+React Router supports "nested routing" which means we have parent-child relationships in our routes. The `app/routes/_index.tsx` is a child of the `app/root.tsx` route. In nested routing, parents are responsible for laying out their children.
 
 💿 Update the `app/root.tsx` to position children. You'll do this with the `<Outlet />` component from `@remix-run/react`:
 
